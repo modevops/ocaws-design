@@ -49,7 +49,7 @@ $ ssh-keygen -t rsa -b 4096 -C user@somemail.com -f OSE-key
 
 Copy SSH config for bastion host
 
-```
+```javascript
 $ cat >/home/vagrant/.ssh/config <<EOF
 Host *.#{PUBLIC_HOSTED_ZONE}
 ProxyCommand               ssh ec2-user@bastion -W %h:%p
