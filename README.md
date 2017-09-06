@@ -41,21 +41,18 @@ eg. https://app.vagrantup.com/centos/boxes/7
 ![Architecture](img/centos.png)
 
 **Linux AWS EC2 AMI**
+
 We use AMI ami-6d1c2007, a Centos 7 Based AMI. You can use Red hat 7 or Fedora Atomic AMI
 
-.. note:: Please subscribe to AMI's marketplace page before using it. eg. For Centos 7 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?qid=1504669674902&sr=0-1&ref_=srh_res_product_title.
-  
-
-   - The note contains all indented body elements
-     following.
-   - It includes this bullet list.
-   
-https://aws.amazon.com/marketplace/pp/B00O7WM7QW?qid=1504669674902&sr=0-1&ref_=srh_res_product_title
+**Note**
+```
+Please subscribe to AMI's marketplace page before using it. eg. for Centos 7 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?qid=1504669674902&sr=0-1&ref_=srh_res_product_title.
+  ```
 
 
 ### Configure key and proxy for ssh:
 
-```
+```Shell
 $ ssh-keygen -t rsa -b 4096 -C user@somemail.com -f OSE-key
 ```
 
@@ -80,7 +77,7 @@ EOF
 
 Set permissions
 
-```
+```Shell
 $ chmod 400 OSE-key.*
 ```
 
@@ -90,13 +87,13 @@ Execute following steps to begin installation:
 
 Copy keypair to home user's ssh folder, eg. OSE-key.pub & OSE-key.pem to /home/vagrant/.ssh/
 
-```
+```Shell
 $ cp ocaws-design/OSE-key.* /home/vagrant/.ssh/
 ```
 
 Export env variables
 
-```
+```Shell
 $ export AWS_ACCESS_KEY_ID=XXXX
 export AWS_SECRET_ACCESS_KEY=XXXX
 export GITHUB_CLIENT_ID=XXXX
@@ -108,7 +105,7 @@ export REGION=us-east-1
 
 Run infrabuild.sh shell script
 
-```
+```Shell
 $ sh ocaws-design/infrabuild.sh
 ```
 
@@ -128,7 +125,7 @@ When script finished, now we have a full functional Openshift Environment on top
 ## Deploying CI/CD
 
 Run cicd.sh shell script
-```
+```Shell
 $ sh ocaws-design/cicd.sh deploy msa-cicd-eap --project-suffix santiagoangel-conekta --ephemeral 
 ```
 
@@ -141,7 +138,7 @@ Applications make use of this set from Openshift pipeline feature. https://blog.
 ## Applications
 
 Run apps.sh shell script
-```
+```Shell
 $ sh ocaws-design/apps.sh
 ```
 
