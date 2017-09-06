@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Prvisioning script to deploy the demo on an OpenShift environment            #
+# Provisioning script to deploy the demo on an OpenShift environment            #
 ################################################################################
 function usage() {
     echo
@@ -158,7 +158,7 @@ GITHUB_REF=${GITHUB_REF:-stable-ocp-3.6}
 GITHUB_URI=https://github.com/$GITHUB_ACCOUNT/coolstore-microservice.git
 
 # maven 
-MAVEN_MIRROR_URL=${ARG_MAVEN_MIRROR_URL:-http://nexus.$PRJ_CI.svc.cluster.local:8081/content/groups/public}
+MAVEN_MIRROR_URL=${ARG_MAVEN_MIRROR_URL:-http://nexus.$PRJ_CI.apps.aws.sc.technology/content/groups/public}
 
 GOGS_USER=developer
 GOGS_PASSWORD=developer
