@@ -110,10 +110,6 @@ We can monitor if services are completely deployed in our AWS console.
 
 When script finished, now we have a full functional Openshift Environment on top of Amazon's AWS.
 
-![OpenshiftV3.6](img/_20170905_183202.JPG)
-
-![OCready](img/_20170905_183921.JPG)
-
 ![OpenshiftAWS-app](img/openshiftaws-app.png)
 
 
@@ -128,7 +124,7 @@ The script creates a set of services(jenkins, sonarqube, nexus).
 
 Applications make use of this set from Openshift pipeline feature. https://blog.openshift.com/openshift-3-3-pipelines-deep-dive/
 
-![OC-CICD](img/_20170905_183143.JPG)
+![OC-CICD](img/cicd-pipeline.png)
 
 ## Applications
 
