@@ -6,6 +6,7 @@ Infrastructure as code for AWS, Openshift, CI, CD and devops methodology.
 
 Deployment solution for OpenShift Origin on Amazon Web Services.
 
+*******************
 
 ## *** Live demo ***
 
@@ -43,7 +44,7 @@ http://node-example-lighthouse.apps.aws.sc.technology/
 Ruby example:
 http://ruby-example-helloworld-msa.apps.aws.sc.technology/
 
-
+*******************
 
 
 ## Overview
