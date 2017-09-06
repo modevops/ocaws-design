@@ -21,24 +21,36 @@ It has 3 masters in different availability zones, 3 infrastructure and 2 applica
 
 ## Prerequisites
 
-An AWS IAM active user with a role and it's set of permission/policies for VPC, EC2, Cloudformation, ELB, Route53, S3, EBS or a full administration role(our case).
+An **AWS IAM active user** with a role and it's set of permission/policies for VPC, EC2, Cloudformation, ELB, Route53, S3, EBS or a full administration role(our case).
 
 ![IAM](img/_20170905_183828.JPG)
 
-A keypair from IAM user.
+**A keypair from IAM user.**
 
 
-A registered domain configured in Route53 as a Hosted Zone before installation.
+**A registered domain** configured in Route53 as a Hosted Zone before installation.
 
 
 
 ![Route53](img/ocaws-test-screenshotzone.png)
 
-Linux environment (baremetal or virtualized) for scripts execution.
+**Linux environment** (baremetal or virtualized) for scripts execution.
 
 eg. https://app.vagrantup.com/centos/boxes/7
 
 ![Architecture](img/centos.png)
+
+**Linux AWS EC2 AMI**
+We use AMI ami-6d1c2007, a Centos 7 Based AMI. You can use Red hat 7 or Fedora Atomic AMI
+
+.. note:: Please subscribe to AMI's marketplace page before using it. eg. For Centos 7 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?qid=1504669674902&sr=0-1&ref_=srh_res_product_title.
+  
+
+   - The note contains all indented body elements
+     following.
+   - It includes this bullet list.
+   
+https://aws.amazon.com/marketplace/pp/B00O7WM7QW?qid=1504669674902&sr=0-1&ref_=srh_res_product_title
 
 
 ### Configure key and proxy for ssh:
