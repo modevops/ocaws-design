@@ -36,6 +36,16 @@ http://keycloak-sso.apps.aws.sc.technology/auth/
 
 ### CI/CD
 
+Jenkins:
+https://jenkins-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology
+
+Nexus:
+http://nexus-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology/#welcome
+
+Git:
+http://gogs-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology/
+
+
 ### Examples
 
 NodeJS example:
