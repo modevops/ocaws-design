@@ -11,7 +11,7 @@ Deployment solution for OpenShift Origin on Amazon Web Services.
 
 **Here is a live demo**
 
--Applications
+### Applications
 
 Frontend:
 http://frontend-helloworld-msa.apps.aws.sc.technology/
@@ -33,9 +33,10 @@ http://bonjour-helloworld-msa.apps.aws.sc.technology/#!/default/get_api_bonjour
 SSO:
 http://keycloak-sso.apps.aws.sc.technology/auth/
 
--CI/CD
+### CI/CD
 
--Examples
+### Examples
+
 NodeJS example:
 http://node-example-lighthouse.apps.aws.sc.technology/
 
