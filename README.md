@@ -121,7 +121,7 @@ When script finished, now we have a full functional Openshift Environment on top
 
 Run cicd.sh shell script
 ```
-$ sh ocaws-design/cicd.sh
+$ sh ocaws-design/cicd.sh deploy msa-cicd-eap --project-suffix santiagoangel-conekta --ephemeral 
 ```
 
 The script creates a set of services(jenkins, sonarqube, nexus).
@@ -139,7 +139,7 @@ $ sh ocaws-design/apps.sh
 
 The script creates a set of microservices in different languages (Java, JavaScript, HTML) and frameworks (JBoss Swarm, Spring Boot, Vert.x, NodeJS, Angularjs) with NetflixOSS.
 
-![Microservices](img/frontend.jpg)
+![Microservices](img/frontend.png)
 
 
 
