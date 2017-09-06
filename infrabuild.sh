@@ -55,3 +55,11 @@ sudo chown -R vagrant /usr/share/ansible*
 --deployment-type=origin --ami=ami-6d1c2007 --github-client-secret=XXXX \
 --github-organization=openshift --github-organization=sctechnology --github-client-id=XXXX --deployment-type origin --stack-name santiagoinfra --containerized=false --no-confirm
 
+
+# set image streams
+# oadm policy add-cluster-role-to-user cluster-admin santiagoangel --config=/etc/origin/master/admin.kubeconfig
+#oc create -f https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v3.6/xpaas-streams/jboss-image-streams.json -n openshift 
+#oc create -f https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v3.6/xpaas-streams/fis-image-streams.json -n openshift
+#oc create -f https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v3.6/image-streams/image-streams-centos7.json -n openshift
+#oc create -f https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v3.6/image-streams/dotnet_imagestreams.json -n openshift
+#oc create -f https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v3.6/quickstart-templates/jenkins-ephemeral-template.json -n openshift
