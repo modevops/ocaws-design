@@ -49,14 +49,14 @@ http://ruby-example-helloworld-msa.apps.aws.sc.technology/
 
 ## Overview
 
-The repository contains bash scripts to clone git repositories , AWS cloudformation stackset(via Ansible), Openshift command line instructions to create apps and a complete CI/CD environment.
+The repository contains bash scripts to clone git repositories , AWS Cloudformation Stack(via Ansible), Openshift command line instructions to create apps and a complete CI/CD environment.
 
 
 ## Architecture
 
 This solution follows reference architecture from https://github.com/openshift/openshift-ansible-contrib/blob/master/reference-architecture/aws-ansible/README.md
 
-It has 3 masters in different availability zones, 3 infrastructure and 2 application nodes. The infrastructure and application nodes are split between availability zones. End-user projects are deployed between application nodes and CI/CD environment on infrastructure nodes both following a full autoscale(Kubernetes) autodiscovery and autohealing setting (NetflixOSS).
+It has 3 masters in different availability zones, 3 infrastructure and 2 application nodes. The infrastructure and application nodes are split between availability zones. End-user projects are deployed between application nodes and CI/CD environment on infrastructure nodes both following a full autoscale(Kubernetes) autodiscovery and autohealing settings (NetflixOSS).
 
 ![Architecture](img/arch.jpg)
 
@@ -75,7 +75,7 @@ An **AWS IAM active user** with a role and it's set of permission/policies for V
 
 ![Route53](img/ocaws-test-screenshotzone.png)
 
-**Linux environment** (baremetal or virtualized) for scripts execution.
+**Linux environment** (bare metal or virtualized) for scripts execution.
 
 eg. https://app.vagrantup.com/centos/boxes/7
 
@@ -150,7 +150,7 @@ Run infrabuild.sh shell script
 $ sh ocaws-design/infrabuild.sh
 ```
 
-In the background, an AWS Cloudformation StackSet is defined by Ansible and created on different Amazon Web Services.
+In the background, an AWS Cloudformation Stack is defined by Ansible and created on different Amazon Web Services.
 
 ![Cloudformation](img/ocaws-test-screenshotinfra.png)
 
@@ -167,7 +167,7 @@ When script finished, now we have a full functional Openshift Environment on top
 
 Run cicd.sh shell script
 ```Shell
-$ sh ocaws-design/cicd.sh deploy msa-cicd-eap --project-suffix santiagoangel-conekta --ephemeral 
+$ sh ocaws-design/cicd.sh deploy msa-cicd-eap --project-suffix santiagoangel-ocaws-conekta --ephemeral 
 ```
 
 The script creates a set of services(jenkins, sonarqube, nexus).
