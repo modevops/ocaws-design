@@ -27,7 +27,6 @@ An AWS IAM active user with a role and it's set of permission/policies for VPC, 
 
 A keypair from IAM user.
 
-![Architecture](img/arch.jpg)
 
 A registered domain configured in Route53 as a Hosted Zone before installation.
 
