@@ -108,7 +108,7 @@ oc set probe dc/frontend --readiness --get-url=http://:8080/
 #Deploy Kubeflix
 
 cd ..
-oc process -f http://central.maven.org/maven2/io/fabric8/kubeflix/packages/kubeflix/1.0.17/kubeflix-1.0.17-kubernetes.yml | oc create -f -
+oc process -f https://raw.githubusercontent.com/santiagoangel/ocaws-design/master/templates/kubeflix-1.0.17-28-kubernetes-template.yml | oc create -f -
 oc expose service hystrix-dashboard --port=8080
 oc policy add-role-to-user admin system:serviceaccount:helloworld-msa:turbine
 
