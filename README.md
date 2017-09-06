@@ -1,4 +1,4 @@
-#ocaws-design
+# ocaws-design
 
 
 Infrastructure as code for AWS, Openshift, CI, CD and devops methodology.
@@ -6,12 +6,12 @@ Infrastructure as code for AWS, Openshift, CI, CD and devops methodology.
 
 Deployment solution for OpenShift Origin on Amazon Web Services.
 
-##Overview
+## Overview
 
 The repository contains bash scripts to clone git repositories , AWS cloudformation stackset(via Ansible), Openshift command line instructions to create apps and a complete CI/CD environment.
 
 
-##Architecture
+## Architecture
 
 This solution follows reference architecture from https://github.com/openshift/openshift-ansible-contrib/blob/master/reference-architecture/aws-ansible/README.md
 
@@ -19,23 +19,39 @@ It has 3 masters in different availability zones, 3 infrastructure and 2 applica
 
 ![Architecture](img/arch.jpg)
 
-##Prerequisites
+## Prerequisites
 
 An AWS IAM active user with a role and it's set of permission/policies for VPC, EC2, Cloudformation, ELB, Route53, S3, EBS or a full administration role(our case).
 
+![IAM](img/_20170905_183828.JPG)
+
 A keypair from IAM user.
+
+![Architecture](img/arch.jpg)
 
 A registered domain configured in Route53 as a Hosted Zone before installation.
 
+
+
+![Route53](img/ocaws-test-screenshotzone.png)
+
 Linux environment (baremetal or virtualized) for scripts execution.
 
-Configure key and proxy for ssh:
+eg. https://app.vagrantup.com/centos/boxes/7
+
+![Architecture](img/centos.png)
+
+
+### Configure key and proxy for ssh:
 
 ```
-#ssh-keygen -t rsa -b 4096 -C user@somemail.com -f OSE-key
+$ ssh-keygen -t rsa -b 4096 -C user@somemail.com -f OSE-key
+```
 
-# Copy SSH config for bastion host
-cat >/home/vagrant/.ssh/config <<EOF
+Copy SSH config for bastion host
+
+```
+$ cat >/home/vagrant/.ssh/config <<EOF
 Host *.#{PUBLIC_HOSTED_ZONE}
 ProxyCommand               ssh ec2-user@bastion -W %h:%p
 IdentityFile               /home/vagrant/.ssh/OSE-key.pem
@@ -49,25 +65,28 @@ CheckHostIP                no
 ForwardAgent               yes
 IdentityFile               /home/vagrant/.ssh/OSE-key.pem
 EOF
-
-# Set permissions
-chmod 400 OSE-key.*
 ```
 
-##Infrastructure creation
+Set permissions
+
+```
+$ chmod 400 OSE-key.*
+```
+
+## Infrastructure creation
 
 Execute following steps to begin installation:
 
 Copy keypair to home user's ssh folder, eg. OSE-key.pub & OSE-key.pem to /home/vagrant/.ssh/
 
 ```
-#cp ocaws-design/OSE-key.* /home/vagrant/.ssh/
+$ cp ocaws-design/OSE-key.* /home/vagrant/.ssh/
 ```
 
+Export env variables
 
 ```
-export env variables
-export AWS_ACCESS_KEY_ID=XXXX
+$ export AWS_ACCESS_KEY_ID=XXXX
 export AWS_SECRET_ACCESS_KEY=XXXX
 export GITHUB_CLIENT_ID=XXXX
 export GITHUB_CLIENT_SECRET=XXXX
@@ -77,36 +96,51 @@ export REGION=us-east-1
 ```
 
 Run infrabuild.sh shell script
+
 ```
-#sh ocaws-design/infrabuild.sh
+$ sh ocaws-design/infrabuild.sh
 ```
 
 In the background, an AWS Cloudformation StackSet is defined by Ansible and created on different Amazon Web Services.
 
+![Cloudformation](img/ocaws-test-screenshotinfra.png)
+
 We can monitor if services are completely deployed in our AWS console.
+
+![AWSstatus](img/ocaws-test-screenshotec2status.png)
 
 When script finished, now we have a full functional Openshift Environment on top of Amazon's AWS.
 
+![OpenshiftV3.6](img/_20170905_183202.JPG)
 
-##Deploying CI/CD
+![OCready](img/_20170905_183921.JPG)
+
+![OpenshiftAWS-app](img/openshiftaws-app.png)
+
+
+## Deploying CI/CD
 
 Run cicd.sh shell script
 ```
-#sh ocaws-design/cicd.sh
+$ sh ocaws-design/cicd.sh
 ```
 
 The script creates a set of services(jenkins, sonarqube, nexus).
 
 Applications make use of this set from Openshift pipeline feature. https://blog.openshift.com/openshift-3-3-pipelines-deep-dive/
 
-##Applications
+![OC-CICD](img/_20170905_183143.JPG)
+
+## Applications
 
 Run apps.sh shell script
 ```
-#sh ocaws-design/apps.sh
+$ sh ocaws-design/apps.sh
 ```
 
 The script creates a set of microservices in different languages (Java, JavaScript, HTML) and frameworks (JBoss Swarm, Spring Boot, Vert.x, NodeJS, Angularjs) with NetflixOSS.
+
+![Microservices](img/frontend.jpg)
 
 
 
