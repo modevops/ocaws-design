@@ -404,14 +404,17 @@ EOM
   sleep 2
 
   local _REPO_DIR=/tmp/$(date +%s)-coolstore-microservice
+  local _REPO_DIR2=/tmp/$(date +%s)-coolstore-microservice2
   pushd ~ >/dev/null && \
+      rm -rf $_REPO_DIR2 && \
+      mkdir $_REPO_DIR2 && \
+      cd $_REPO_DIR2 && \
+      git clone https://github.com/$GITHUB_ACCOUNT/coolstore-microservice
       rm -rf $_REPO_DIR && \
       mkdir $_REPO_DIR && \
       cd $_REPO_DIR && \
       git init && \
-      curl -sL -o ./coolstore.zip https://github.com/$GITHUB_ACCOUNT/coolstore-microservice/archive/$GITHUB_REF.zip && \
-      tar xfz ./coolstore.zip --strip 1 && \
-      rm ./coolstore.zip && \
+      cp -R $_REPO_DIR2/coolstore-microservice/* .
       git remote add origin http://$GOGS_ROUTE/$GOGS_ADMIN_USER/coolstore-microservice.git && \
       git add . --all && \
       git commit -m "Initial add" && \
