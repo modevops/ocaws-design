@@ -37,13 +37,16 @@ http://keycloak-sso.apps.aws.sc.technology/auth/
 ### CI/CD
 
 Jenkins:
-https://jenkins-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology
+https://jenkins-cicd.apps.aws.sc.technology
 
 Nexus:
-http://nexus-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology/#welcome
+http://nexus-cicd.apps.aws.sc.technology
 
 Git:
-http://gogs-ci-santiagoangel-ocaws-conekta.apps.aws.sc.technology/
+http://gogs-cicd.apps.aws.sc.technology/
+
+SonarQube:
+http://sonarqube-cicd.apps.aws.sc.technology/
 
 
 ### Examples
@@ -177,14 +180,14 @@ When script finished, now we have a full functional Openshift Environment on top
 
 Run cicd.sh shell script
 ```Shell
-$ sh ocaws-design/cicd.sh deploy msa-cicd-eap --project-suffix santiagoangel-ocaws-conekta --ephemeral 
+$ sh ocaws-design/cicd.sh
 ```
 
-The script creates a set of services(jenkins, sonarqube, nexus).
+The script creates a set of services(git, jenkins, sonarqube, nexus).
 
 Applications make use of this set from Openshift pipeline feature. https://blog.openshift.com/openshift-3-3-pipelines-deep-dive/
 
-![OC-CICD](img/cicd-pipeline.png)
+![OC-CICD](img/fullcicd.png)
 
 ## Applications
 
