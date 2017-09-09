@@ -6,58 +6,7 @@ Infrastructure as code for AWS, Openshift, CI, CD and devops methodology.
 
 Deployment solution for OpenShift Origin on Amazon Web Services.
 
-*******************
 
-## *** Live demo ***
-
-**Here is a live demo**
-
-### Applications
-
-Frontend:
-http://frontend-helloworld-msa.apps.aws.sc.technology/
-
-![LiveDemo](img/livedemo.png)
-
-Hola:
-http://hola-helloworld-msa.apps.aws.sc.technology/
-
-Aloha:
-http://aloha-helloworld-msa.apps.aws.sc.technology/
-
-Ola:
-http://ola-helloworld-msa.apps.aws.sc.technology/
-
-Bonjour:
-http://bonjour-helloworld-msa.apps.aws.sc.technology/#!/default/get_api_bonjour
-
-SSO:
-http://keycloak-sso.apps.aws.sc.technology/auth/
-
-### CI/CD
-
-Jenkins:
-https://jenkins-cicd.apps.aws.sc.technology
-
-Nexus:
-http://nexus-cicd.apps.aws.sc.technology
-
-Git:
-http://gogs-cicd.apps.aws.sc.technology/
-
-SonarQube:
-http://sonarqube-cicd.apps.aws.sc.technology/
-
-
-### Examples
-
-NodeJS example:
-http://node-example-lighthouse.apps.aws.sc.technology/
-
-Ruby example:
-http://ruby-example-helloworld-msa.apps.aws.sc.technology/
-
-*******************
 
 
 ## Overview
